@@ -1,0 +1,10 @@
+Columns to consider:
+- Author
+- Title
+- Edition
+- Year of publication
+- Status: Owned, Borrowed (from), Loaned (to)
+- Loaner Name
+- Borrower Name
+- Have read (boolean)
+- Category (list of categories? Education, Horror, Mystery, Fantasy, Science Fiction, Fiction, Nonfiction, Journalism, Technical, Other)
