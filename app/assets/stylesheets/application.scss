@@ -1,0 +1,16 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "library";
+
+body {
+  background-image: url(asset-path('wood-texture.jpg'));
+  background-repeat: repeat;
+}
+
+a {
+  color: #78bada;
+
+  &:hover {
+    color: #a1cfe5;
+  }
+}

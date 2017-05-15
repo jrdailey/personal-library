@@ -1,0 +1,55 @@
+@import "mixins";
+
+$off-white: #f2f2f2;
+$dark-grey: #888888;
+
+.library-headline,
+.edit-book-headline,
+.create-book-headline {
+  color: $off-white;
+  text-shadow: -8px 5px 4px black;
+}
+
+a.back-link {
+  padding-left: 3rem;
+  @include emphasized_link();
+}
+
+.action-wrapper {
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+
+  .new-book-link {
+    @include emphasized_link();
+  }
+}
+
+.library-table-wrapper {
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  table {
+    background-color: white;
+
+    th {
+      background-color: $dark-grey;
+      color: $off-white;
+    }
+  }
+}
+
+.book-form-wrapper {
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 100px;
+  width: 25%;
+  padding: 2rem;
+
+  .form-horizontal {
+    .form-group {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

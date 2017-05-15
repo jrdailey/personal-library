@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="library-headline text-center">Personal Library</h1>
+
+<div class="action-wrapper text-right">
+  <%= link_to 'New Book', new_book_path, class: 'new-book-link' %>
+</div>
+<div class="library-table-wrapper">
+  <table class="table table-inverse table-striped table-bordered table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Status</th>
+        <th>Have Read?</th>
+        <th>Loaner / Borrower</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.author.full_name %></td>
+          <td><%= book.genre.name %></td>
+          <td><%= book.status %></td>
+          <td><%= book.have_read ? 'yes' : 'no' %></td>
+          <td><%= book.loaner_borrower %></td>
+          <td><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%= link_to 'Remove', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

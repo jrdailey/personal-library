@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: one
+  genre: one
+  status: MyString
+  have_read: false
+  loaner_borrower: MyString
+
+two:
+  title: MyString
+  author: two
+  genre: two
+  status: MyString
+  have_read: false
+  loaner_borrower: MyString
