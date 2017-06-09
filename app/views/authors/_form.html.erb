@@ -1,0 +1,26 @@
+<%= form_for(author, html: { class: 'form-horizontal', id: 'new-author-form' }) do |f| %>
+  <% if author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+      <ul>
+      <% author.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :first_name, class: 'contol-label' %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name, class: 'contol-label' %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </div>
+
+  <div class="actions text-center">
+    <%= f.submit %>
+  </div>
+<% end %>
