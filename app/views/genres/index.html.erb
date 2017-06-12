@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="library-headline text-center">Genre</h1>
+
+<div class="library-table-wrapper">
+  <table class="table table-inverse table-striped table-bordered table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @genres.each do |genre| %>
+        <tr>
+          <td><%= genre.name %></td>
+          <td><%= link_to 'Remove', genre, method: :delete, data: { confirm: 'Deleting a genre will delete all books belonging to that genre. Are you sure you want to continue?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Back', books_path, class: 'back-link' %>

@@ -7,11 +7,6 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
-  # GET /books/1
-  # GET /books/1.json
-  def show
-  end
-
   # GET /books/new
   def new
     @book = Book.new
@@ -24,16 +19,11 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @genre = Genre.new(genre_params)
-
-    @author.save
-    @genre.save
-
     @book = Book.new(book_params)
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to books_path, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
@@ -73,9 +63,5 @@ class BooksController < ApplicationController
 
     def book_params
       params.require(:book).permit(:title, :author_id, :genre_id, :status, :have_read, :loaner_borrower)
-    end
-
-    def genre_params
-      params.require(:genre).permit(:name)
     end
 end

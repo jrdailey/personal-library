@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :books
-  resource :authors, :genres, except: :show
+  resources :books, except: :show
+  resources :authors, :genres, only: [:index, :new, :create, :destroy]
 
   root 'books#index'
 end

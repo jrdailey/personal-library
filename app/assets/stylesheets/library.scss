@@ -16,10 +16,13 @@ a.back-link {
 }
 
 .action-wrapper {
+  color: white;
   padding-bottom: 1rem;
   padding-right: 3rem;
 
-  .new-book-link {
+  .new-book-link,
+  .authors-link,
+  .genres-link {
     @include emphasized_link();
   }
 }
