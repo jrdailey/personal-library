@@ -1,4 +1,4 @@
-$(function() {
+(function() {
   var initialize = function() {
         $('#add-author-link').click(function(e) {
           e.preventDefault();
@@ -69,5 +69,5 @@ $(function() {
         });
       };
 
-  initialize();
-});
+  $(document).on('turbolinks:load', initialize);
+})();
