@@ -39,7 +39,7 @@
 
     <div class="form-group">
       <%= f.label :status, class: 'contol-label' %>
-      <%= f.text_field :status, class: 'form-control' %>
+      <%= f.select(:status, options_for_select([['Owned', 'Owned'], ['Borrowed', 'Borrowed'], ['Lent', 'Lent']], book.status), {}, class: 'form-control') %>
     </div>
 
     <div class="form-group">
@@ -48,7 +48,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :loaner_borrower, class: 'contol-label' %>
+      <%= f.label :loaner_borrower, 'Loaner / Borrower', class: 'contol-label' %>
       <%= f.text_field :loaner_borrower, class: 'form-control' %>
     </div>
 
