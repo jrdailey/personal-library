@@ -3,13 +3,13 @@
         $('#add-author-link').click(function(e) {
           e.preventDefault();
 
-          $('#author-prompt').load('/authors/new #new-author-form', setUpAuthorPromptFormFields);
+          $('#author-prompt').load('/authors/new #new-author-form-wrapper', setUpAuthorPromptFormFields);
         });
 
         $('#add-genre-link').click(function(e) {
           e.preventDefault();
 
-          $('#genre-prompt').load('/genres/new #new-genre-form', setUpGenrePromptFormFields);
+          $('#genre-prompt').load('/genres/new #new-genre-form-wrapper', setUpGenrePromptFormFields);
         });
       },
       reloadAuthorSelect = function() {
