@@ -2,6 +2,7 @@
 
 $off-white: #f2f2f2;
 $dark-grey: #888888;
+$bp-desktop: 700px;
 
 .library-headline,
 .edit-book-headline,
@@ -11,25 +12,28 @@ $dark-grey: #888888;
 }
 
 a.back-link {
-  padding-left: 3rem;
   @include emphasized_link();
 }
 
 .action-wrapper {
-  color: white;
+  color: $off-white;
   padding-bottom: 1rem;
-  padding-right: 3rem;
+  text-align: center;
 
   .new-book-link,
   .authors-link,
   .genres-link {
     @include emphasized_link();
   }
+
+  @media (min-width: $bp-desktop) {
+    padding-right: 3rem;
+    text-align: right;
+  }
 }
 
 .library-table-wrapper {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  overflow-x: scroll;
 
   table {
     background-color: white;
@@ -39,14 +43,20 @@ a.back-link {
       color: $off-white;
     }
   }
+
+  @media (min-width: $bp-desktop) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 .book-form-wrapper {
   background: white;
   margin-left: auto;
   margin-right: auto;
-  min-width: 100px;
-  width: 25%;
+  max-width: 40rem;
+  min-width: 10rem;
+  width: 75%;
   padding: 2rem;
 
   .form-horizontal {
