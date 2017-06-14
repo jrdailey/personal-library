@@ -71,3 +71,17 @@ a.back-link {
     text-align: right;
   }
 }
+
+.action-wrapper {
+  &.mobile-text-center {
+    text-align: center;
+  }
+  @media (min-width: $bp-desktop) {
+    &.desktop-text-left {
+      text-align: left;
+    }
+    &.desktop-text-right {
+      text-align: right;
+    }
+  }
+}
