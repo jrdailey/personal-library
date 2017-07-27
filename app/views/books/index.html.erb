@@ -5,7 +5,12 @@
 <div class="action-wrapper desktop-text-right mobile-text-center">
   <%= link_to 'View Authors', authors_path, class: 'authors-link' %> |
   <%= link_to 'View Genres', genres_path, class: 'genres-link' %> |
-  <%= link_to 'New Book', new_book_path, class: 'new-book-link' %>
+  <%= link_to 'New Book', new_book_path, class: 'new-book-link' %> |
+  <% if current_user %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'logout-link' %>
+  <% else %>
+  <%= link_to 'Login', new_user_session_path, class: 'login-link' %>
+  <% end %>
 </div>
 <div class="library-table-wrapper">
   <table class="table table-inverse table-striped table-bordered table-hover table-responsive">
@@ -25,7 +30,11 @@
       <% @books.each do |book| %>
         <tr>
           <td><%= link_to 'Edit', edit_book_path(book) %></td>
-          <td><%= link_to 'Remove', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <% if current_user.try(:admin?) %>
+              <%= link_to 'Remove', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </td>
           <td><%= book.title %></td>
           <td><%= book.author.full_name %></td>
           <td><%= book.genre.name %></td>

@@ -22,7 +22,9 @@ a.back-link {
 
   .new-book-link,
   .authors-link,
-  .genres-link {
+  .genres-link,
+  .login-link,
+  .logout-link {
     @include emphasized_link();
   }
 
